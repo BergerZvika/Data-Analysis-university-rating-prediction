@@ -3,5 +3,9 @@ project on the paper "A Comparison of Regression Models for Predicting Graduate 
 
 
 ## run
-- pip install -r requirements.txt
-- streamlit run main.py
+```python
+ pip install -r requirements.txt
+```
+ ```'python
+ streamlit run main.py
+```
