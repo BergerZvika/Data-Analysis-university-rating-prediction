@@ -380,7 +380,7 @@ if __name__ == '__main__':
     st.sidebar.info(
         "[Kaggle Dataset](https://www.kaggle.com/mohansacharya/datasets)")
     st.sidebar.info("[Presentation]()")
-    st.sidebar.info("[Github](https://github.com/BergerZvika/nurse-scheduling-problem)")
+    st.sidebar.info("[Github](https://github.com/BergerZvika/Graduate-Admission-Prediction)")
 
     if menu == 'Introduction':
         introduction()
