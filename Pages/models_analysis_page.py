@@ -22,7 +22,7 @@ def evaluation(model):
 
 class ModelsAnalysisPage(Page):
     def show_page(self):
-            st.write("""# Comparison of Models""")
+            st.write("""# Data Analysis of the Models""")
 
             st.markdown("""This page compare between machine learning models. We show the MSE and R-Square values for each model.
                         Below the table we put some graph to show the diffrent off the predicted values on models.""")

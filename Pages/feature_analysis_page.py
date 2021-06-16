@@ -8,7 +8,7 @@ from config import Config
 
 class FeatureAnalysisPage(Page):
     def show_page(self):
-            st.write("""# Exploratory Data Analysis of the Dataset""")
+            st.write("""# Data Analysis of the Dataset Features""")
 
             st.set_option('deprecation.showPyplotGlobalUse', False)
             fig, ax = plt.subplots(figsize=(10, 10))
