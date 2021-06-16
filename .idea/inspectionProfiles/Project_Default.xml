@@ -1,0 +1,29 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="8">
+            <item index="0" class="java.lang.String" itemvalue="ipaddress" />
+            <item index="1" class="java.lang.String" itemvalue="pathlib" />
+            <item index="2" class="java.lang.String" itemvalue="watchdog" />
+            <item index="3" class="java.lang.String" itemvalue="pyOpenSSL" />
+            <item index="4" class="java.lang.String" itemvalue="sanic" />
+            <item index="5" class="java.lang.String" itemvalue="cryptography" />
+            <item index="6" class="java.lang.String" itemvalue="pandas" />
+            <item index="7" class="java.lang.String" itemvalue="streamlit" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="urllib.disable_warnings" />
+          <option value="streamlit" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
