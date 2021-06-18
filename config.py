@@ -6,12 +6,15 @@ from sklearn.preprocessing import StandardScaler
 
 class Config:
     # read the database
-    admission_df = pd.read_csv('dataset/Admission_Predict.csv')
+    data1 = pd.read_csv('dataset/Admission_Predict.csv')
+    data2 = pd.read_csv('dataset/Admission_Predict_Ver1.1.csv')
+
+    admission_df= data1
     admission_df.drop('Serial No.', axis=1, inplace=True)
 
     # split to train and test
-    x = admission_df.drop(columns=['Chance of Admit'])
-    y = admission_df['Chance of Admit']
+    x = admission_df.drop(columns=['Chance of Admit','University Rating'])
+    y = admission_df['University Rating']
     x = np.array(x)
     y = np.array(y)
     y = y.reshape(-1, 1)

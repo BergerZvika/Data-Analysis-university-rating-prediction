@@ -19,4 +19,4 @@ Liel Shuker :
  ```'python
  streamlit run main.py
 ```
-- copy the url that open to browser
+- copy the url to open browser

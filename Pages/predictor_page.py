@@ -21,8 +21,8 @@ def predict(data, model):
 class PredictorPage(Page):
     def show_page(self):
             st.write("""# Prediction using Machine Learning Models""")
-            st.markdown(
-                """In this page you can insert a new student data and get a predict base on machine learning models.""")
+            st.markdown("""In this page you can insert a new student data and get a predict of
+             university rating base on machine learning models.""")
 
             st.write("""#### Machine Learning Model""")
             machine = st.selectbox("Choose Model:",
@@ -32,7 +32,6 @@ class PredictorPage(Page):
             st.write("""#### User data""")
             gre = st.number_input("Enter your GRE Score (0 - 340):")
             toefl = st.number_input("Enter Your TOEFL Score (0 - 120):")
-            ur = st.slider("Enter Your University Ratings", 1, 5, 1)
             sop = st.slider("Enter Your Statement of Purpose Strength:", 1.0, 5.0, 1.0)
             lor = st.slider("Enter Your Letter of Recomendation Strength:", 1.0, 5.0, 1.0)
             cgpa = st.number_input("Enter Your CGPA (0 - 10):")
@@ -56,7 +55,7 @@ class PredictorPage(Page):
 
             if (toefl <= 120 and toefl >= 0) and (gre <= 340 and gre >= 0) and (cgpa <= 10.00 and cgpa >= 0):
 
-                user_data = [gre, toefl, ur, sop, lor, cgpa, rxp]
+                user_data = [gre, toefl, sop, lor, cgpa, rxp]
 
                 if st.button("Predict"):
                     model = LinearRegression()
@@ -87,17 +86,15 @@ class PredictorPage(Page):
                         time.sleep(0.1)
                         my_bar.progress(percent_complete + 1)
 
-                    st.write("""### Predicted Chance of Admission based on the current profile :""")
+                    st.write("""### Predicted University Rating on the current profile :""")
                     result = result[0]
-                    if result > 1:
-                        result = 1
-                    elif result < 0:
-                        result = 0
-                    val = int(result * 100)
+                    result = int("%.f" % int(result))
 
-                    if val >= 70 and val <= 100:
-                        st.success(str(val) + "%")
-                    elif val < 70 and val >= 40:
-                        st.warning(str(val) + "%")
+                    print(result)
+
+                    if result >= 4 and result <= 5:
+                        st.success(str(result))
+                    elif result == 3:
+                        st.warning(str(result))
                     else:
-                        st.error(str(val) + "%")
+                        st.error(str(result))

@@ -8,15 +8,16 @@ class IntroductionPage(Page):
     def show_page(self):
         st.write("""# A Comparison of Regression Models for Predicting Graduate Admission""")
         st.write("""### Introduction""")
-        st.markdown("Prospective graduate students always face a dilemma deciding universities"
-                    " of their choice while applying to master’s programs. While there are a good number "
-                    "of predictors and consultancies that guide a student, they aren’t always reliable since"
-                    " decision is made on the basis of select past admissions. In this website, we present a"
-                    " Machine Learning based method where we compare different regression algorithms, such as"
-                    " Linear Regression, Support Vector Regression, Decision Trees, Random Forest,  Neural "
-                    "Network, SGD, KNN Regression and Passive Aggressive. given the "
-                    "profile of the student. We then compute error functions for the different models and"
-                    " compare their performance to select the best performing model.")
+        st.markdown("""Prospective graduate students always face a dilemma deciding universities
+                    of their choice while applying to master’s programs. But is there a possibility
+                    we can predict
+                    the decision of student to which university rating we choose to apply?
+                    In this website, we present a
+                    Machine Learning based method where we compare different regression algorithms, such as
+                    Linear Regression, Support Vector Regression, Decision Trees, Random Forest,  Neural
+                    Network, SGD, KNN Regression and Passive Aggressive. given the 
+                    profile of the student. We then compute error functions for the different models and
+                    compare their performance to select the best performing model.""")
 
         st.write("""### Dataset""")
         st.dataframe(Config.admission_df)

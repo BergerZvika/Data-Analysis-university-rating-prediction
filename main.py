@@ -17,7 +17,7 @@ if __name__ == '__main__':
         "[The paper](https://drive.google.com/file/d/17su4WNKIwrOA5WUXXS3qIPStu3eLfEfv/view?usp=sharing)")
     st.sidebar.info(
         "[Kaggle Dataset](https://www.kaggle.com/mohansacharya/datasets)")
-    st.sidebar.info("[Presentation]()")
+    st.sidebar.info("[Presentation](https://drive.google.com/file/d/1eYHqCOmOlUScEwnPa6XxyAgCWGuYG7gr/view?usp=sharing)")
     st.sidebar.info("[Github](https://github.com/BergerZvika/Graduate-Admission-Prediction)")
 
     introduction = IntroductionPage()

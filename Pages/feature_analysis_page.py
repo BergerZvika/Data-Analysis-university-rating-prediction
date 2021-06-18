@@ -17,28 +17,27 @@ class FeatureAnalysisPage(Page):
             st.pyplot()
 
             st.markdown("""
-                    The features that affect the "Chance to Admit" are: (Importance is in Descending Order)
+                    The features that affect the "University Rating" are: (Importance is in Descending Order)
 
-                    - CGPA (0.87)
-                    - GRE Score (0.80)
-                    - TOEFL Score (0.79)
-                    - University Rating (0.71)
-                    - Statement of Purpose (SOP) (0.68)
-                    - Letter of Recommendation (LOR) (0.67)
-                    - Research Experience (0.55)
+                    - CGPA (0.75)
+                    - Statement of Purpose (SOP) (0.73)
+                    - TOEFL Score (0.7)
+                    - GRE Score (0.67)
+                     - Letter of Recommendation (LOR) (0.66)
+                    - Research Experience (0.44)
                     """
                         )
 
             st.write("Let's explore these features to get a better understanding")
 
             select_gr = st.selectbox('Select any Feature',
-                                     ['CGPA', 'GRE Score', "TOEFL Score", "University Rating", "Research Experience"])
+                                     ['CGPA', 'GRE Score', "TOEFL Score","SOP", "Research Experience", "University Rating"])
 
             if select_gr == 'CGPA':
 
                 st.markdown("""  """)
                 st.write("""
-                        #### CGPA vs Chance of Admit
+                        #### CGPA vs University Rating
                         """)
                 st.markdown("""  """)
 
@@ -56,8 +55,8 @@ class FeatureAnalysisPage(Page):
                 sns.distplot(Config.admission_df['CGPA'], color='r')
                 plt.title('CGPA Distribution of Applicants')
                 plt.subplot(1, 2, 2)
-                sns.regplot(Config.admission_df['CGPA'], Config.admission_df['Chance of Admit'], color='g')
-                plt.title('CGPA vs Chance of Admit')
+                sns.regplot(Config.admission_df['CGPA'], Config.admission_df['University Rating'], color='g')
+                plt.title('CGPA vs University Rating')
 
                 st.pyplot()
 
@@ -65,7 +64,7 @@ class FeatureAnalysisPage(Page):
 
                 st.markdown("""  """)
                 st.write("""
-                        #### GRE Score vs Chance of Admit
+                        #### GRE Score vs University Rating
                         """)
                 st.markdown("""  """)
 
@@ -83,7 +82,7 @@ class FeatureAnalysisPage(Page):
 
 
 
-                        **Moreover, it appears as applicant's GRE Score has a strong correlation with their Chance of Admission, but less than that of CGPA.**
+                        **Moreover, it appears as applicant's GRE Score has a medium correlation with their Chance of Admission, but less than that of CGPA.**
                         """)
 
                 plt.figure(figsize=(20, 8))
@@ -92,8 +91,8 @@ class FeatureAnalysisPage(Page):
                 plt.title('Distributed GRE Score of Applicants')
 
                 plt.subplot(1, 2, 2)
-                sns.regplot(Config.admission_df['GRE Score'], Config.admission_df['Chance of Admit'], color='b')
-                plt.title('GRE Scores vs Chance of Admit')
+                sns.regplot(Config.admission_df['GRE Score'], Config.admission_df['University Rating'], color='b')
+                plt.title('GRE Scores vs University Rating')
 
                 st.pyplot()
 
@@ -101,7 +100,7 @@ class FeatureAnalysisPage(Page):
 
                 st.markdown("""  """)
                 st.write("""
-                        #### TOEFL Score vs Chance of Admit
+                        #### TOEFL Score vs University Rating
                         """)
                 st.markdown("""  """)
 
@@ -128,9 +127,32 @@ class FeatureAnalysisPage(Page):
                 plt.title('Distributed TOEFL Scores of Applicants')
 
                 plt.subplot(1, 2, 2)
-                sns.regplot(Config.admission_df['TOEFL Score'], Config.admission_df['Chance of Admit'], color='c')
-                plt.title('TOEFL Scores vs Chance of Admit')
+                sns.regplot(Config.admission_df['TOEFL Score'], Config.admission_df['University Rating'], color='c')
+                plt.title('TOEFL Scores vs University Rating')
 
+                st.pyplot()
+
+            elif select_gr == "SOP":
+
+                st.markdown("""  """)
+                st.write("""
+                                  #### SOP Score vs University Rating
+                                  """)
+                st.markdown("""  """)
+
+                st.markdown(
+                    """
+                    Statement of Purpose (SOP) of the students.
+                    
+                     The data analysis shows that the most applicants come from a 3 and 4 Statement of Purpose .
+
+                    """
+                )
+
+                plt.figure(figsize=(20, 8))
+                plt.subplot(1, 2, 1)
+                sns.distplot(Config.admission_df['SOP'], color='g')
+                plt.title('Distributed SOP of Applicants')
                 st.pyplot()
 
             elif select_gr == "University Rating":
