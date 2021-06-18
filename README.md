@@ -1,4 +1,4 @@
-# Graduate Admission Prediction
+# University Rating Prediction
 [![built with Streamlit](https://img.shields.io/badge/built%20with%20-Streamlit-brightgreen)](https://www.streamlit.io/)
 
 
