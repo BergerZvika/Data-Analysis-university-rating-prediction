@@ -5,9 +5,13 @@ from Pages.introduction_page import IntroductionPage
 from Pages.models_analysis_page import ModelsAnalysisPage
 from Pages.predictor_page import PredictorPage
 
+# to run:
+from Pages.university_rating_analysis import UniversityRatingAnalysisPage
+
 if __name__ == '__main__':
     st.sidebar.title("Graduate Admission Prediction")
-    menu = st.sidebar.radio('Navigation', ('Introduction', "Feature Analysis", "Models Analysis", "Predictor"))
+    menu = st.sidebar.radio('Navigation', ('Introduction', "Feature Analysis", "Models Analysis",
+                                           "University Rating Analysis","Predictor"))
     st.sidebar.title("Details")
     st.sidebar.info(
         "Author: Zvi Berger and Liel Shuker")
@@ -24,6 +28,7 @@ if __name__ == '__main__':
     feature_analysis = FeatureAnalysisPage()
     predictor = PredictorPage()
     models_analysis = ModelsAnalysisPage()
+    university_rating = UniversityRatingAnalysisPage()
 
     if menu == 'Introduction':
         introduction.show_page()
@@ -36,5 +41,9 @@ if __name__ == '__main__':
 
     if menu == "Models Analysis":
         models_analysis.show_page()
+
+    if menu == "University Rating Analysis":
+        university_rating.show_page()
+
 
 

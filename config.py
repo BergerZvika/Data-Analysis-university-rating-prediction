@@ -22,4 +22,4 @@ class Config:
     scaler_x = StandardScaler()
     x = scaler_x.fit_transform(x)
 
-    X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.20)
+    X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
